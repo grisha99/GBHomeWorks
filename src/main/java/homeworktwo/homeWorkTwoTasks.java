@@ -114,6 +114,4 @@ public class homeWorkTwoTasks {
             arr[0] = tempDigitFirst;
         }
     }
-
-
 }
