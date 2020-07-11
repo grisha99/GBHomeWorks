@@ -31,7 +31,7 @@ public class homeWorkFourTasks {
         }
         field = initField();
         printField();
-        turnNum = 1;
+        turnNum = 0;
         do {
             userTurn();
             turnNum++;
@@ -95,10 +95,10 @@ public class homeWorkFourTasks {
     }
 
     private static boolean isValidTurn(int column, int row) {
-        if ((row) < fieldSIZE && (row) >= 0 && (column) < fieldSIZE && (column) >= 0) {
-            return field[row][column] == DOT_EMPTY;
+        if ((row) < 0 || (row) >= fieldSIZE ||  (column) < 0 || (column) >= fieldSIZE) {
+            return false;
         }
-        return  false;
+        return field[row][column] == DOT_EMPTY;
     }
 
     private static boolean isDraw() {
