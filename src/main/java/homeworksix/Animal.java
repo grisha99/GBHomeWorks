@@ -8,14 +8,14 @@ public class Animal {
     protected double maxJumpHeight;         // максимальная высота прыжков в метрах
 
     public Animal() {
-        maxJumpHeight = (double) Math.round((Math.random() * 2) * 100) / 100;
-        maxRunDistance = (double) Math.round((Math.random() * 500) * 100) / 100;
-        maxSwimDistance = (double) Math.round((Math.random() * 60) * 100) / 100;
+        maxJumpHeight = Math.round((Math.random() * 2) * 100.0) / 100.0;
+        maxRunDistance = Math.round((Math.random() * 500) * 100.0) / 100.0;
+        maxSwimDistance = Math.round((Math.random() * 60) * 100.0) / 100.0;
     }
 
 
     protected void run(double distance) {
-        if (distance < maxRunDistance) {
+        if (distance <= maxRunDistance) {
             System.out.println("Я " + name + " пробежала " + distance + " метров");
         } else {
             System.out.println("Я " + name + " не могу пробежать " + distance + " метров, могу максимум " + maxRunDistance + " метров");
@@ -23,7 +23,7 @@ public class Animal {
     }
 
     protected void jump(double height) {
-        if (height < maxJumpHeight) {
+        if (height <= maxJumpHeight) {
             System.out.println("Я " + name + " прыгнула на " + height + " метров");
         } else {
             System.out.println("Я " + name + " не могу прыгнуть на " + height + " метров, могу максимум на " + maxJumpHeight + " метров");
@@ -31,7 +31,7 @@ public class Animal {
     }
 
     protected void swim(double distance) {
-        if (distance < maxSwimDistance) {
+        if (distance <= maxSwimDistance) {
             System.out.println("Я " + name + " проплыла на " + distance + " метров");
         } else {
             System.out.println("Я " + name + " не могу плавать на " + distance + " метров, могу максимум на " + maxSwimDistance + " метров");
