@@ -2,7 +2,7 @@ package homeworkseven;
 
 public class HomeWorkSevenTasks {
 
-    private Cat [] catHeap;                     // куча голодных котов
+    private Cat [] catArr;                     // куча голодных котов
     private Plate plate = new Plate();
 //    Plate plate = new Plate(40);              // если нужно конкретное кол-во еды в миске
 
@@ -11,16 +11,16 @@ public class HomeWorkSevenTasks {
     }
 
     private void initCatHeap(int catCount) {
-        catHeap = new Cat[catCount];
-        for (int i = 0; i < catHeap.length; i++) {
-            catHeap[i] = new Cat("Барсик_" + (i + 1));
+        catArr = new Cat[catCount];
+        for (int i = 0; i < catArr.length; i++) {
+            catArr[i] = new Cat("Барсик_" + (i + 1));
         }
     }
 
     public void startCatDinner() {
         System.out.println("++++++++ОБЕД+++++++++");
         plate.info();
-        for (Cat curCat : catHeap) {
+        for (Cat curCat : catArr) {
             if (curCat.getAppetite() > plate.getPlateCapacity()) {
                 System.out.print("Миска для " + curCat.getName() + " слишком маленькая. ");
                 System.out.println("Нужна миска минимум на " + curCat.getAppetite() + " еды.");

@@ -7,7 +7,7 @@ public class Cat {
 
     public Cat(String name) {
         this.name = name;
-        appetite = 1 + (int) (Math.random() * 50);  // масимальный аппетит 50
+        appetite = (int) (Math.random() * 51);  // масимальный аппетит 50
         satiety = false;           // изначально кот голодный
     }
 
