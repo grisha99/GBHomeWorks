@@ -40,7 +40,8 @@ public class ConsoleChatClient {
                     }
                     if (msgFromServer.equalsIgnoreCase("/serverStop")) {    // сервер упал
                         System.out.println("Сервер упал. Отключение!");
-                        System.exit(0);
+                        //System.exit(0);
+                        break;
                     }
                     System.out.println(msgFromServer);
                 } catch (IOException e) {
@@ -68,6 +69,9 @@ public class ConsoleChatClient {
 
             while (true) {
                 String userMsg = scn.nextLine();
+                if (!serverListenerThread.isAlive()) {
+                    break;
+                }
                 if (userMsg.equalsIgnoreCase("exit")) {
                     dos.writeUTF("/iWantDisconnect");       // сообщение серверу что хочу отключиться
                     serverListenerThread.join();                // ожидание ответа что могу выключаться
