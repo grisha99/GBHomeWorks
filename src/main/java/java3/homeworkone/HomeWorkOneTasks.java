@@ -40,8 +40,11 @@ public class HomeWorkOneTasks {
      */
 
     public static <T> ArrayList<T> arrayToArrayList(T[] arr) {
-
-        return new ArrayList<>(Arrays.asList(arr));
+        ArrayList<T> list = new ArrayList<>();
+        for (T element : arr) {
+            list.add(element);
+        }
+        return list;
     }
 
     public static void testArrays() {
